@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Hello App Engine</title>
+    
+    <script src="jquery-2.1.0.min.js"></script>
+    
+    <script>  
+    $( function() {    
+    	$('#calc1').click( function() { 
+    		$('#result1').empty()
+    		
+    		var var1 = $('#var1').val(); 
+    		var var2 = $('#var2').val(); 
+    		$('#result1').load( "/second?taskType="+ 1 + "&var1="+var1+"&var2="+var2); 
+    	} );  
+    	
+    	$('#calc2').click( function() { 
+    		$('#result2').empty()
+    		
+    		var a = $('#a').val(); 
+    		var b = $('#b').val(); 
+    		var c = $('#c').val(); 
+    		$('#result2').load( "/second?taskType="+ 2 + "&a="+a+"&b="+b+"&c="+c); 
+    	} ); 
+    	
+    	$('#calc3').click( function() { 
+    		$('#result3').empty()
+    		$('#result3').load( "/second?taskType="+ 3); 
+    	} );
+    	
+    	$('#calc4').click( function() { 
+    		$('#result4').empty()
+    		$('#result4').load( "/second?taskType="+ 4); 
+    	} );
+    } );  
+    </script>
+  </head>
+
+  <body>
+    <form id="3.1">
+		<p>Введите числа:</p>
+		<input id="var1"type="number"/>
+		<input id="var2"type="number"/>
+
+	</form>
+
+	<button id="calc1">Посчитать</button>
+
+	<p>Результат операции: <b><span style="color:red" id="result1"></span></b></p>
+	
+	<br>
+	<br>
+	
+	<form id="3.2">
+		<p>ax²+bx+c=0:</p>
+		<span>a:</span>
+		<input id="a"type="number"/>
+		<span>b:</span>
+		<input id="b"type="number"/>
+		<span>c:</span>
+		<input id="c"type="number"/>
+	</form>
+
+	<button id="calc2">Посчитать</button>
+
+	<p>Результат операции: <b><span style="color:red" id="result2"></span></b></p>
+	
+	<!-- 3.3 -->
+	<button id="calc3">Вывести рандомный двумерный массив</button>
+
+	<p>Результат операции:</p>
+	<p><b><span style="color:red" id="result3"></span></b></p>
+	
+	<br>
+	<br>
+	
+	<!-- 3.4 -->
+	<button id="calc4">Вывести рандомный двумерный массив  и макс число</button>
+
+	<p>Результат операции:</p>
+	<p><b><span style="color:red" id="result4"></span></b></p>
+	
+	<br>
+	<br>
+	
+  </body>
+</html>
